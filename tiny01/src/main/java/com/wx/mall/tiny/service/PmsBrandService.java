@@ -1,6 +1,6 @@
-package com.wx.mall.tiny01.service;
+package com.wx.mall.tiny.service;
 
-import com.wx.mall.tiny01.mbg.model.PmsBrand;
+import com.wx.mall.tiny.mbg.model.PmsBrand;
 
 import java.util.List;
 

@@ -1,10 +1,10 @@
-package com.wx.mall.tiny01.service.impl;
+package com.wx.mall.tiny.service.impl;
 
 import com.github.pagehelper.PageHelper;
-import com.wx.mall.tiny01.mbg.mapper.PmsBrandMapper;
-import com.wx.mall.tiny01.mbg.model.PmsBrand;
-import com.wx.mall.tiny01.mbg.model.PmsBrandExample;
-import com.wx.mall.tiny01.service.PmsBrandService;
+import com.wx.mall.tiny.mbg.mapper.PmsBrandMapper;
+import com.wx.mall.tiny.mbg.model.PmsBrand;
+import com.wx.mall.tiny.mbg.model.PmsBrandExample;
+import com.wx.mall.tiny.service.PmsBrandService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

@@ -1,4 +1,4 @@
-package com.wx.mall.tiny01.common.api;
+package com.wx.mall.tiny.common.api;
 
 /**
  * 枚举了一些常用API操作码

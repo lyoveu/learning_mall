@@ -1,9 +1,9 @@
-package com.wx.mall.tiny01.controller;
+package com.wx.mall.tiny.controller;
 
-import com.wx.mall.tiny01.common.api.CommonPage;
-import com.wx.mall.tiny01.common.api.CommonResult;
-import com.wx.mall.tiny01.mbg.model.PmsBrand;
-import com.wx.mall.tiny01.service.PmsBrandService;
+import com.wx.mall.tiny.common.api.CommonPage;
+import com.wx.mall.tiny.common.api.CommonResult;
+import com.wx.mall.tiny.mbg.model.PmsBrand;
+import com.wx.mall.tiny.service.PmsBrandService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;

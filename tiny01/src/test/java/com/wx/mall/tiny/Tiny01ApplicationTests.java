@@ -1,4 +1,4 @@
-package com.wx.mall.tiny01;
+package com.wx.mall.tiny;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

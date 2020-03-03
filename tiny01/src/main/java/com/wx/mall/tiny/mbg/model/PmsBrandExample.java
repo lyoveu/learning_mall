@@ -1,4 +1,4 @@
-package com.wx.mall.tiny01.mbg.model;
+package com.wx.mall.tiny.mbg.model;
 
 import java.util.ArrayList;
 import java.util.List;

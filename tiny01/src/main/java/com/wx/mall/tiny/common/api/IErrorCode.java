@@ -1,4 +1,4 @@
-package com.wx.mall.tiny01.common.api;
+package com.wx.mall.tiny.common.api;
 
 /**
  * 封装API的错误码

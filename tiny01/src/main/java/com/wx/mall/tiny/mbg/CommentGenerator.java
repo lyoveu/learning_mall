@@ -1,4 +1,4 @@
-package com.wx.mall.tiny01.mbg;
+package com.wx.mall.tiny.mbg;
 
 import org.mybatis.generator.api.IntrospectedColumn;
 import org.mybatis.generator.api.IntrospectedTable;

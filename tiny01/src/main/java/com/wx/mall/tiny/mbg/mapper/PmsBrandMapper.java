@@ -1,7 +1,7 @@
-package com.wx.mall.tiny01.mbg.mapper;
+package com.wx.mall.tiny.mbg.mapper;
 
-import com.wx.mall.tiny01.mbg.model.PmsBrand;
-import com.wx.mall.tiny01.mbg.model.PmsBrandExample;
+import com.wx.mall.tiny.mbg.model.PmsBrand;
+import com.wx.mall.tiny.mbg.model.PmsBrandExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 

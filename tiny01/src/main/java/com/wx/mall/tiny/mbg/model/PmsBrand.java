@@ -1,4 +1,4 @@
-package com.wx.mall.tiny01.mbg.model;
+package com.wx.mall.tiny.mbg.model;
 
 import io.swagger.annotations.ApiModelProperty;
 import java.io.Serializable;
