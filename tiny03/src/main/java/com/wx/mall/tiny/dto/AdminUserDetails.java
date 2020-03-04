@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 /**
- * SpringSecurity需要的用户详情
+ * SpringSecurity需要的用户详情（主要是用户信息和权限）
  */
 public class AdminUserDetails implements UserDetails {
     private UmsAdmin umsAdmin;

@@ -18,6 +18,7 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.config.http.SessionCreationPolicy;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -41,6 +42,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
     private RestAuthenticationEntryPoint restAuthenticationEntryPoint;
 
+    /**
+     * 用于配置需要拦截的url路径、jwt过滤器及出异常后的处理器
+     * @param httpSecurity
+     * @throws Exception
+     */
     @Override
     protected void configure(HttpSecurity httpSecurity) throws Exception {
         httpSecurity.csrf()// 由于使用的是JWT，我们这里不需要csrf
@@ -78,6 +84,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .authenticationEntryPoint(restAuthenticationEntryPoint);
     }
 
+    /**
+     * 用于配置UserDetailsService及PasswordEncoder
+     * @param auth
+     * @throws Exception
+     */
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.userDetailsService(userDetailsService())
@@ -89,16 +100,32 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         return new BCryptPasswordEncoder();
     }
 
+    /**
+     * SpringSecurity定义的核心接口，用于根据用户名获取用户信息
+     * -- 需要自行实现
+     * @return
+     */
     @Bean
     public UserDetailsService userDetailsService() {
-        //获取登录用户信息
-        return username -> {
-            UmsAdmin admin = adminService.getAdminByUsername(username);
-            if (admin != null) {
-                List<UmsPermission> permissionList = adminService.getPermissionList(admin.getId());
-                return new AdminUserDetails(admin,permissionList);
+//        //获取登录用户信息
+//        return username -> {
+//            UmsAdmin admin = adminService.getAdminByUsername(username);
+//            if (admin != null) {
+//                List<UmsPermission> permissionList = adminService.getPermissionList(admin.getId());
+//                return new AdminUserDetails(admin,permissionList);
+//            }
+//            throw new UsernameNotFoundException("用户名或密码错误");
+//        };
+        return new UserDetailsService() {
+            @Override
+            public UserDetails loadUserByUsername(String username) {
+                UmsAdmin admin = adminService.getAdminByUsername(username);
+                if (admin != null) {
+                    List<UmsPermission> permissionList = adminService.getPermissionList(admin.getId());
+                    return new AdminUserDetails(admin,permissionList);
+                }
+                throw new UsernameNotFoundException("用户名或密码错误");
             }
-            throw new UsernameNotFoundException("用户名或密码错误");
         };
     }
 
